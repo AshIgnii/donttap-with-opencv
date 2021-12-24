@@ -4,11 +4,7 @@ import numpy as np
 import pyautogui
 from mss import mss
 
-
-# O codigo a seguir foi escrito por Davi.
-# A não ser que não funcione, aí eu não faço ideia de quem escreveu.
-
-def click(x, y):  # Auto-explanatorio
+def click(x, y):  # função para clicar
     print('click')
     pyautogui.failSafeCheck()
     pyautogui.click(x + 940, y + 255, 1, 0, 'left')
@@ -34,7 +30,7 @@ with mss() as sct:
         contours, hierarchy = cv2.findContours(cu, 1, 2)
 
         if not len(contours) > 0:
-            cu2 = cu  # A esse ponto eu desisti da minha vida
+            cu2 = cu  # Não pergunte
         else:
             cnt = contours[0]  # Determinando centro do primeiro bloco
             np.squeeze(cnt)
@@ -74,7 +70,7 @@ with mss() as sct:
                 if cx2 > 0 or cy2 > 0:
                     cc2 = cv2.circle(hsv, (cx2, cy2), 20, (0, 255, 0,), 1)
 
-        print('fps: {0}'.format(1 / (time.time() - last_time)))  # Otimização foda p caralho
+        print('fps: {0}'.format(1 / (time.time() - last_time)))  # Mostra o fps
 
         try:  # Clica nos bloco porra
             if 'cx' in globals():
@@ -96,6 +92,3 @@ with mss() as sct:
         if cv2.waitKey(25) & 0xFF == ord('q'):  # Tbm n funciona mas se eu encostar quebra
             # cv2.destroyAllWindows()
             break
-
-    # Quando eu escrevi isso, só deus e eu sabia oque eu estava fazendo
-    # Agora, apenas deus sabe
