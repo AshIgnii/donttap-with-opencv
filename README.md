@@ -11,6 +11,6 @@ i only tested it in frenzy mode
 
 3-execute main.js through the terminal
 
-**move the mouse to the upper-right screen border to end the script**
+**move the mouse to the upper-right screen border to kill the script**
 
-**the browser window need to be in fullscreen**
+**the browser window needs to be in fullscreen**
