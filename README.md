@@ -9,7 +9,7 @@ i only tested it in frenzy mode
 
 2-change the html body background-color to white
 
-3-execute main.js through the terminal
+3-execute main.py through the terminal
 
 **move the mouse to the upper-right screen border to kill the script**
 
