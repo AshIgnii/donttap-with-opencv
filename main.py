@@ -1,16 +1,27 @@
+import sys
+sys.path.append('d:\!programming\python\python 3.10.0\lib\site-packages')
+
 import time
 import cv2
 import numpy as np
 import pyautogui
 from mss import mss
 
+height = 1080
+width = 1920
+
+heightDiv = int(height/4 - 30)
+widthDiv = int((width/5)*2 - 135)
+
+mon = {'top': heightDiv, 'left': widthDiv, 'width': 650, 'height': 640}
+
 def click(x, y):  # function to click
     print('click')
     pyautogui.failSafeCheck()
-    pyautogui.click(x + 940, y + 255, 1, 0, 'left')
+    pyautogui.click(x + widthDiv, y + heightDiv, 1, 0, 'left')
 
+startTime = time.time()
 
-mon = {'top': 255, 'left': 940, 'width': 650, 'height': 630}
 with mss() as sct:
     # mon = sct.monitors[0]
     while True:
@@ -86,9 +97,11 @@ with mss() as sct:
         except KeyboardInterrupt:
             break
 
-        # cv2.imshow('HSV', np.array(cu2)) #makes the code slow, only use it for debugging
-        # cv2.imshow('Canny', np.array(cu))
+        #cv2.imshow('HSV', np.array(cu2)) #makes the code slow, only use it for debugging
+        #cv2.imshow('Canny', np.array(cu))
 
         if cv2.waitKey(25) & 0xFF == ord('q'):
             # cv2.destroyAllWindows()
+            break
+        if time.time() - startTime >= 32: #the script stops after 32 seconds have passed
             break
