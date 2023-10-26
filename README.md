@@ -3,7 +3,7 @@ a python script that plays "donttap.com" with computer vision
 
 this is my first project with python and opencv, don't expect much
 
-i only tested it in frenzy mode
+only works in frenzy mode
 # How to use:
 1-install opencv-python, pyautogui and mss
 
